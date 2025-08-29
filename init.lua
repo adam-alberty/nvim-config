@@ -670,7 +670,21 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'tokyonight-night'
+
+      --vim.cmd.colorscheme 'tokyonight-night'
+    end,
+  },
+
+  {
+    'sainnhe/gruvbox-material',
+    priority = 1000, -- ensures it loads early, before other plugins
+    config = function()
+      vim.g.gruvbox_material_background = 'hard' -- or 'medium', 'soft'
+      vim.g.gruvbox_material_foreground = 'material' -- default palette
+      -- Optional: enable italic comments
+      vim.g.gruvbox_material_enable_italic = true
+
+      vim.cmd.colorscheme 'gruvbox-material'
     end,
   },
 
